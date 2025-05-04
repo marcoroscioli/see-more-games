@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>games</title>
+    <script>
+        function redirectToSearch() {
+            const searchInput = document.getElementById('linkInput');
+            const searchQuery = searchInput.value.trim();
+            
+            // Validate the input
+            if (!searchQuery) {
+                alert('Please enter a search term');
+                return;
+            }
+            
+            // Create Google search URL with the query
+            const googleSearchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery);
+            
+            // Redirect to Google search
+            window.location.href = googleSearchUrl;
+        }
+
+        function quickRedirect(url) {
+            window.location.href = url;
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #336600;
+        }
+        .container {
+            background-color: #008080;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 1100px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .quick-link {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex-grow: 1;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .quick-link:hover {
+            background-color: #45a049;
+        }
+        .redirect-button {
+            background-color: #cc9900;
+            color: navy blue;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .redirect-button:hover {
+            background-color: #996600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>My games</h2>
+        <h2>Now, if you viewed this from https://matteoroscioli.github.io/search-engine/ (my brothers website) then now you know that he didnt make this.</h2>
+        <input 
+            type="text" 
+            id="linkInput" 
+            placeholder="Enter search terms..."
+        >
+        <button class="redirect-button" onclick="redirectToSearch()">Search Google</button>
+        
+        <div class="button-group">
+            
+             <button class="quick-link" onclick="quickRedirect('https://marcoroscioli.github.io/Seemygames-stuff/')">Other games I made</button>
+             <button class="quick-link" onclick="quickRedirect('https://marcoroscioli.github.io/To-do-list/')">to-do list</button>
+        </div>
+        </div>
+        <div class="button-group">
+            
+             <button class="quick-link" onclick="quickRedirect('https://marcoroscioli.github.io/Whack-a-mole/')">Whack-a-mole</button>
+            <button class="quick-link" onclick="quickRedirect('https://marcoroscioli.github.io/reminder-thang/')">Reminders</button>
+        </div>
+    </div>
+</body>
+</html>
